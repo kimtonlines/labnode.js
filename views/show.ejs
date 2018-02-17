@@ -2,7 +2,7 @@
     <h1>Liste des Articles</h1> 
     <% for (article of articles) { %>
 
-        <%= article.libelle %> <%= article.qte %> <%= article.pu%> <a href="/supprimer/<%= article.id %>">Supprimer</a><br>
+        <%= article.libelle %> <a href="/supprimer/<%= article.id %>">Supprimer</a> <a href="/voir/<%= article.id %>">Voir</a><br>
 
     <% } %>
 

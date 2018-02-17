@@ -1,0 +1,9 @@
+<% include header %> 
+<h1>Modifier</h1> 
+<form action="/modifier/<%= article.id %>" method="post">
+<input type="text" name="libelle" value="<%= article.libelle %>">
+<input type="text" name="qte" value="<%= article.qte %>">
+<input type="text" name="pu" value="<%= article.qte %>">
+<button type="submit">Modifier</button>
+</form>
+<% include footer %> 

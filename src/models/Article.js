@@ -19,9 +19,24 @@ class Article {
         });
     }
 
+    static findOne (id, cb) {
+
+        connection.query('SELECT * FROM article WHERE id = ? LIMIT 1', [id], function (error, result){
+            if (error) throw error;
+            cb(result[0]);
+        });
+    }
+
     static supprimer (id) {
 
         connection.query('DELETE FROM article WHERE id = ? LIMIT 1', [id], function (err){
+            if (err) throw err;
+        });
+    }
+
+    static update (id, [libelle, qte, pu]) {
+
+        connection.query('UPDATE article SET libelle = ?, qte = ?, pu = ? WHERE id = ?', [libelle, qte, pu, id], function (err){
             if (err) throw err;
         });
     }
