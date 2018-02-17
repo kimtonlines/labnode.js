@@ -1,7 +1,11 @@
 <% include header %> 
     <h1>Liste des Articles</h1> 
-    <%= data[0] %>
-    <%= data[1] %>
-    <%= data[2] %>
+    <% for (article of articles) { %>
+
+        <%= article.libelle %> <%= article.qte %> <%= article.pu%> <a href="/supprimer/<%= article.id %>">Supprimer</a><br>
+
+    <% } %>
+
+
     <a href="/ajouter">Ajouter</a> 
 <% include footer %> 
