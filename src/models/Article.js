@@ -3,11 +3,10 @@ var connection = require('../db');
 
 class Article {
 
-    static ajouter (libelle, qte, pu, cb) {
+    static ajouter ([libelle, qte, pu]) {
 
-        connection.query('INSERT INTO article SET libelle = ?, qte = ?, pu = ?', [libelle, qte, pu], function (err, result){
+        connection.query('INSERT INTO article SET libelle = ?, qte = ?, pu = ?', [libelle, qte, pu], function (err){
             if (err) throw err;
-            cb(result);
         });
     }
 
